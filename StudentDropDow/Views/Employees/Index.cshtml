@@ -1,0 +1,125 @@
+﻿@model IEnumerable<StudentDropDow.Models.Cascade.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    .aa{
+        text-align:center;
+       color:red;
+    }
+</style>
+
+<h1 class="aa">Employeelist</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@* <div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th>EmpName</th>
+                        <th>MoileNo</th>
+                        <th>Address</th>
+                        <th>LastName</th>
+                        <th>Image</th>
+                        <th>CountryName</th>
+                        <th>StateName</th>
+                        <th>CityName</th>
+
+                    </tr>
+                </thead>
+                @foreach(var d in Model)
+                {
+                    <tr class="text-center">
+                        <th>@d.EmpName</th>
+                        <th>@d.MoileNo</th>
+                        <th>@d.Address</th>
+                        <th>@d.LastName</th>
+                        <th><img src="@d.Image" height="100px;" width="100px;"/></th>
+                        <th>@d.CountryName</th>
+                        <th>@d.StateName</th>
+                        <th>@d.CityName</th>
+
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+
+    </div>
+</div> *@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoileNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoileNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.Image) *@
+                    <img src="~/Image/aa.jpg" alt="@item.Image" height="100px;" width="100px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> 

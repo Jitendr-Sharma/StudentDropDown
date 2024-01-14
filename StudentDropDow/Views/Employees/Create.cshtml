@@ -1,0 +1,81 @@
+﻿@model StudentDropDow.Models.Cascade.Employee
+
+@{
+    ViewData["Title"] = "Create";
+    ViewData["Title"] = "CascadeDropdown";
+}
+
+<h1 style="text-align:center">Create</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmpName" class="control-label"></label>
+                <input asp-for="EmpName" class="form-control" />
+                <span asp-validation-for="EmpName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoileNo" class="control-label"></label>
+                <input asp-for="MoileNo" class="form-control" />
+                <span asp-validation-for="MoileNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <textarea rows="2" cols="10" asp-for="Address" class="form-control"> </textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input type="file" asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryName" class="control-label"></label>
+                <select id="Country" asp-for="CountryName" class="form-control">
+                    <option>---Select Country---</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StateName" class="control-label"></label>
+                <select class="form-control" asp-for="StateName" id="State">
+                    <option>---Select State---</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CityName" class="control-label"></label>
+                <select class="form-control" asp-for="CityName" id="City">
+                    <option>---Select City---</option>
+                </select>
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script src="~/js/cascade.js"></script>
+
