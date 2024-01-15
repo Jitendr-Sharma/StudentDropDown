@@ -66,8 +66,6 @@ namespace StudentDropDow.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,EmpName,MoileNo,Address,LastName,Image,CountryName,StateName,CityName")] Employee employee)
         {
-
-
             if (ModelState.IsValid)
             {
                 var path = environment.WebRootPath;
